@@ -10,6 +10,43 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <%= link_to "FRAT", root_path %>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+      </div>
+          
+        <!-- 
+          <a class="navbar-brand" href="http://fraternitedupiranha.com/"> <img src="/assets/logo_frat.png" alt="Fraternité du piranha" height="100px"> </a>
+          <a class="nav-link" href="http://fraternitedupiranha.com/">Accueil</a>
+          <a class="nav-link" href="http://fraternitedupiranha.com/commanditaire/">Commanditaires</a>
+          <a class="nav-link" href="http://fraternitedupiranha.com/ecussons-2/">Écussons</a>
+          <a class="nav-link" href="http://fraternitedupiranha.com/reglements/">Réglements</a>
+          <a class="nav-link" href="http://fraternitedupiranha.com/mission/">Mission</a>
+          <a class="nav-link" href="http://fraternitedupiranha.com/ecussons/">Emplacement</a>
+          -->
+    </nav>
     <%= yield %>
   </body>
 </html>

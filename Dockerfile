@@ -1,6 +1,12 @@
 FROM ruby:2.5.7-slim
 
-RUN apt-get update && apt-get install -y build-essential patch ruby-dev zlib1g-dev liblzma-dev libsqlite3-dev nodejs libcurl4 curl postgresql-client libpq-dev
+# working on corporate computer lolol. remove if you're a regular human being
+ENV HTTP_PROXY http://fastweb.int.bell.ca:80
+ENV HTTPS_PROXY http://fastweb.int.bell.ca:80
+ENV http_proxy http://fastweb.int.bell.ca:80
+ENV https_proxy http://fastweb.int.bell.ca:80
+
+RUN apt update --allow-releaseinfo-change && apt-get install -y build-essential patch ruby-dev zlib1g-dev liblzma-dev libsqlite3-dev nodejs libcurl4 curl postgresql-client libpq-dev
 RUN mkdir /myapp
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
