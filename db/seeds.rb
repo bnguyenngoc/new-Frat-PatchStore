@@ -115,3 +115,4 @@ patch_types = [
 
 patch_types.each do |patch_type|
     PatchType.create(name: patch_type, description: "Lorem Ipsum")
+end
