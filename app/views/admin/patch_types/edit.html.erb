@@ -1,0 +1,13 @@
+<%= render partial: "layouts/admin_nav"%>
+
+<div id="content">
+  <div class="container mb-5 whiteContainer">
+    <div class="row">
+      <div class="col-xs-12 col-md-12 col-lg-12 mb-5">
+        <h2>Modification d'un type regroupement</h2>
+      </div>
+    </div>
+
+    <%= render 'form', patch_type: @patch_type, patch_url: admin_patch_type_path %>
+  </div>
+</div>

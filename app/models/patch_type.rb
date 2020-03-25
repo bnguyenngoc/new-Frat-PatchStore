@@ -1,0 +1,2 @@
+class PatchType < ApplicationRecord
+end

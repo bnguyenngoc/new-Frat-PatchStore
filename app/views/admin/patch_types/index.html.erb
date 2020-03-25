@@ -1,0 +1,41 @@
+<%= render partial: "layouts/admin_nav"%>
+<div id="content">
+  <div class="container mb-5 whiteContainer">
+    <div class="row">
+      <div class="col-xs-12 col-md-12 col-lg-12 mb-5">
+        <h2>Gestion des types de regroupement</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-12 col-lg-12">
+        <%= link_to 'Ajouter un type', new_admin_patch_type_path, {class: 'btn btn-primary btn-sm'}%>
+        <br><br>
+        <table id="groups" class="table table-striped table-bordered table-sm" style="width:100%">
+          <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Description</th>
+            <th class="no-sort">Action</th>
+          </tr>
+          </thead>
+          <tbody id="fillByCSV">
+          <% if (@patch_types.present?) then %>
+            <% @patch_types.each do |patch_type| %>
+              <tr data-id="0">
+                <td><%= patch_type.name %></td>
+                <td><%= patch_type.description%> </td>
+                <td class="fit">
+                  <%= link_to 'Modifier', edit_admin_patch_type_path(patch_type), {class: 'btn btn-primary btn-sm'}%>
+                  <%= link_to 'Supprimer', admin_patch_type_path(patch_type),class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?'}%>
+                </td>
+              </tr>
+            <%end %>
+          <% end %>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

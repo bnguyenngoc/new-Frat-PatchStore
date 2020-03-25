@@ -1,0 +1,35 @@
+
+<%= form_with(model: patch_type, url: patch_url, local: true) do |form| %>
+  <% if (patch_type.present? && patch_type.errors.present?) %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patch_type.errors.count, "error") %> prohibited this patch_type from being saved:</h2>
+
+      <ul>
+      <% patch_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group row">
+    <label class="col-3 col-form-label">Nom du type de regroupement</label>
+    <div class="col-7">
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-3 col-form-label">Description</label>
+    <div class="col-7">
+      <%= form.text_area :description, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-xs-12 col-md-12 col-lg-12 aRight">
+      <%= link_to 'Annuler', admin_patch_types_path, class: 'btn btn-danger btn-sm' %>
+      <%= form.submit class: 'btn btn-success btn-sm' %>
+    </div>
+  </div>
+<% end %>
